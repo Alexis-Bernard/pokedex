@@ -1,0 +1,30 @@
+body {
+    background: url(../resources/images/fond.png)
+}
+
+.searchBar {
+    background-color: white;
+    border-radius: 20px;
+    height: 75px;
+
+    position: fixed;
+    width: 50%;
+    top: 15px;
+    left: 25%;
+    z-index: 2;
+}
+
+.pokemonList {
+    background-color: #e57373cc;
+    width: 80%;
+    margin-top: 115px;
+    border-radius: 50px;
+}
+
+.pokemon {
+    border-radius: 50px;
+}
+
+.pokemonImage {
+    max-height: 190px
+}

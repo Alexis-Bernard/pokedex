@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Encodage -->
+    <meta charset="utf-8">
+
+    <!-- Title -->
+    <title>Pokédex</title>
+    <link rel="icon" href="resources/images/title_icon.png" type="image/icon type">
+
+    <!-- Import CSS -->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="row searchBar z-depth-5">
+            <div class="input-field col s12">
+                <input id="search" type="text" class="validate" v-model="searchText" @input="searchPokemon">
+                <label for="search">Pokemon name or ID</label>
+            </div>
+        </div>
+
+        <div class="container row z-depth-5 pokemonList">
+            <pokemon v-if="searchMode" v-for="pokemon in pokemonsSearched" :pokemon="pokemon"></pokemon>
+            <pokemon v-else v-for="pokemon in pokemonsDetailed" :pokemon="pokemon"></pokemon>
+        </div>
+    </div>
+
+    <!-- Import JS -->
+    <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/pokemon.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+        const vue = app.mount('#app')
+    </script>
+</body>
+
+</html>
